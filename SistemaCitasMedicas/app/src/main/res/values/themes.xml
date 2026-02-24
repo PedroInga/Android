@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SistemaCitasMedicas" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+
+        <!-- Aplicar estilos globales -->
+        <item name="materialButtonStyle">@style/BotonPrimario</item>
+        <item name="materialCardViewStyle">@style/CardEstandar</item>
+        <item name="textInputStyle">@style/CampoTexto</item>
+    </style>
+</resources>

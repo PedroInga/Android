@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla de Login: Permite al usuario ingresar al sistema -->
+<!-- Usa LinearLayout vertical con Material Design -->
+<!-- ESTILOS APLICADOS: TextoTituloPantalla, TextoSecundario, CampoTexto, BotonPrimario, BotonPeligro -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/colorWhite">
+
+    <!-- Logo de la aplicación centrado en la parte superior -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/logo_medicitas"
+        android:contentDescription="Logo MediCitas"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Título de la aplicación - Usa estilo TextoTituloPantalla + color primario -->
+    <TextView
+        style="@style/TextoTituloPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MediCitas"
+        android:textSize="28sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Subtítulo descriptivo - Usa estilo TextoSecundario -->
+    <TextView
+        style="@style/TextoSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sistema de Gestión de Citas Médicas"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Campo de usuario - Usa estilo CampoTexto -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/CampoTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:startIconDrawable="@android:drawable/ic_menu_myplaces">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Usuario"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo de contraseña - Usa estilo CampoTexto -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/CampoTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtContrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón de ingresar - Usa estilo BotonPrimario -->
+    <Button
+        style="@style/BotonPrimario"
+        android:id="@+id/btnIngresar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="INGRESAR"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Botón de cancelar - Usa estilo BotonPeligro -->
+    <Button
+        style="@style/BotonPeligro"
+        android:id="@+id/btnCancelarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="CANCELAR" />
+
+    <!-- Texto informativo - Usa estilo TextoSecundario -->
+    <TextView
+        style="@style/TextoSecundario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario: admin | Contraseña: 1234"
+        android:textSize="12sp"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

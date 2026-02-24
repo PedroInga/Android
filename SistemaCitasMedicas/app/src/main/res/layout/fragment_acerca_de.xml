@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: HeaderPantalla, TextoTituloPantalla, TextoSecundario, CardEstandar, TextoSubtitulo, TextoCuerpo, BotonSecundario -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Header - Usa estilo HeaderPantalla con orientación vertical y gravity center -->
+        <LinearLayout
+            style="@style/HeaderPantalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp">
+
+            <ImageView
+                android:layout_width="119dp"
+                android:layout_height="109dp"
+                android:contentDescription="Logo MediCitas"
+                android:src="@drawable/logo_medicitas" />
+
+            <!-- Título app - Usa estilo TextoTituloPantalla -->
+            <TextView
+                style="@style/TextoTituloPantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MediCitas"
+                android:textSize="28sp"
+                android:layout_marginTop="12dp" />
+
+            <!-- Subtítulo - Usa estilo TextoSecundario + color blanco -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sistema de Gestión de Citas Médicas"
+                android:textColor="@color/colorWhite"
+                android:alpha="0.9"
+                android:layout_marginTop="4dp" />
+
+            <!-- Versión - Usa estilo TextoSecundario + color blanco -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versión 1.0.0"
+                android:textColor="@color/colorWhite"
+                android:alpha="0.7"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- === CARD ACERCA DE === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acerca de la Aplicación"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Descripción - Usa estilo TextoSecundario -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MediCitas es una aplicación móvil desarrollada como proyecto final del curso Desarrollo de Aplicaciones Móviles I. Permite gestionar citas médicas de manera eficiente, registrando pacientes, doctores y sus respectivas citas."
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- === CARD TECNOLOGÍAS === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tecnologías Utilizadas"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Lista tecnologías - Usa estilo TextoSecundario -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Lenguaje: Kotlin\n• IDE: Android Studio\n• Base de datos: SQLite\n• Diseño: Material Design\n• Mapas: Google Maps API\n• Arquitectura: MVC"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="6dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- === CARD DESARROLLADOR === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desarrolladores"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_persona"
+                        android:padding="10dp"
+                        android:contentDescription="Desarrollador" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp">
+
+                        <!-- Nombre - Usa estilo TextoCuerpo + bold -->
+                        <TextView
+                            style="@style/TextoCuerpo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estudiantes de CIBERTEC"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- Carrera - Usa estilo TextoSecundario -->
+                        <TextView
+                            style="@style/TextoSecundario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carrera de Computación e Informática" />
+
+                        <!-- Ciclo - Usa estilo TextoSecundario -->
+                        <TextView
+                            style="@style/TextoSecundario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ciclo V - 2026-1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón Volver - Usa estilo BotonSecundario -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/BotonSecundario"
+            android:id="@+id/btnVolverAcerca"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="16dp"
+            android:text="Volver al Menú"
+            app:icon="@drawable/ic_volver"
+            app:iconTint="@color/colorPrimary" />
+
+    </LinearLayout>
+</ScrollView>

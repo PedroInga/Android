@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: HeaderPantalla, TextoTituloPantalla, BadgeEstado, CardEstandar, TextoSubtitulo, TextoCuerpo, TextoSecundario, BotonPrimario, BotonDanger -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header - Usa estilo HeaderPantalla con orientación vertical y gravity center -->
+        <LinearLayout
+            style="@style/HeaderPantalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_cita"
+                app:tint="@color/colorWhite"
+                android:contentDescription="Detalle cita" />
+
+            <!-- Título - Usa estilo TextoTituloPantalla -->
+            <TextView
+                style="@style/TextoTituloPantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalle de Cita"
+                android:layout_marginTop="8dp" />
+
+            <!-- Estado - Usa estilo BadgeEstado -->
+            <TextView
+                style="@style/BadgeEstado"
+                android:id="@+id/tvEstadoDetalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendiente"
+                android:textSize="14sp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/bg_estado_pendiente"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Contenedor de Fragment -->
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp" />
+
+        <!-- === CARD INFORMACIÓN DEL PACIENTE === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Información del Paciente"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Nombre paciente - Usa estilo TextoCuerpo -->
+                <TextView
+                    style="@style/TextoCuerpo"
+                    android:id="@+id/tvDetallePaciente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre del paciente"
+                    android:textSize="15sp" />
+
+                <!-- DNI - Usa estilo TextoSecundario -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:id="@+id/tvDetalleDniPaciente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DNI: 00000000"
+                    android:layout_marginTop="4dp" />
+
+                <!-- Teléfono - Usa estilo TextoSecundario -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:id="@+id/tvDetalleTelPaciente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tel: 000000000"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- === CARD INFORMACIÓN DEL DOCTOR === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Información del Doctor"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Nombre doctor - Usa estilo TextoCuerpo -->
+                <TextView
+                    style="@style/TextoCuerpo"
+                    android:id="@+id/tvDetalleDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Nombre"
+                    android:textSize="15sp" />
+
+                <!-- Especialidad - Usa estilo TextoSecundario + color primario -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:id="@+id/tvDetalleEspecialidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Especialidad"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- === CARD DETALLES DE LA CITA === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Detalles de la Cita"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Fila Fecha -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_calendario"
+                        app:tint="@color/colorTextSecondary"
+                        android:contentDescription="Fecha" />
+
+                    <!-- Fecha - Usa estilo TextoCuerpo -->
+                    <TextView
+                        style="@style/TextoCuerpo"
+                        android:id="@+id/tvDetalleFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha: 01/01/2026"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Fila Hora -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_reloj"
+                        app:tint="@color/colorTextSecondary"
+                        android:contentDescription="Hora" />
+
+                    <!-- Hora - Usa estilo TextoCuerpo -->
+                    <TextView
+                        style="@style/TextoCuerpo"
+                        android:id="@+id/tvDetalleHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hora: 10:00"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+
+                <!-- Label Motivo - Usa estilo TextoCuerpo + bold -->
+                <TextView
+                    style="@style/TextoCuerpo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motivo:"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Motivo texto - Usa estilo TextoSecundario -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:id="@+id/tvDetalleMotivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motivo de la consulta"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- === BOTONES ACCIÓN === -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <!-- Botón Editar - Usa estilo BotonPrimario -->
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonPrimario"
+                android:id="@+id/btnEditarDetalleCita"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Editar"
+                android:layout_marginEnd="8dp"
+                app:icon="@drawable/ic_editar"
+                app:iconTint="@color/colorWhite" />
+
+            <!-- Botón Eliminar - Usa estilo BotonDanger -->
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonDanger"
+                android:id="@+id/btnEliminarDetalleCita"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Eliminar"
+                app:icon="@drawable/ic_eliminar"
+                app:iconTint="@color/colorWhite" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

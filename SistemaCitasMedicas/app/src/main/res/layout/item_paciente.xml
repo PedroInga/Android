@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: CardEstandar, TextoSubtitulo, TextoSecundario -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/CardEstandar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:strokeColor="@color/colorCardPaciente"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_persona"
+            android:background="@drawable/bg_circle_primary"
+            android:padding="10dp"
+            app:tint="@color/colorWhite"
+            android:contentDescription="Paciente" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <!-- Nombre - Usa estilo TextoSubtitulo -->
+            <TextView
+                style="@style/TextoSubtitulo"
+                android:id="@+id/tvNombrePaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Paciente"
+                android:textColor="@color/colorTextPrimary" />
+
+            <!-- DNI - Usa estilo TextoSecundario -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:id="@+id/tvDniPaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DNI: 00000000"
+                android:layout_marginTop="2dp" />
+
+            <!-- Teléfono - Usa estilo TextoSecundario -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:id="@+id/tvTelefonoPaciente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tel: 000000000"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnEditarPaciente"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_editar"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Editar"
+                app:tint="@color/colorPrimary" />
+
+            <ImageButton
+                android:id="@+id/btnEliminarPaciente"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_eliminar"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Eliminar"
+                app:tint="@color/colorDanger"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

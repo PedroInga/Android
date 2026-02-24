@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuPrincipalFragment">
+
+    <!-- Fragment del Menú Principal (pantalla inicial después del login) -->
+    <fragment
+        android:id="@+id/menuPrincipalFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.MenuPrincipalFragment"
+        android:label="Menú Principal"
+        tools:layout="@layout/fragment_menu_principal">
+
+        <!-- Navegación desde menú a cada sección -->
+        <action
+            android:id="@+id/action_menu_to_listaPacientes"
+            app:destination="@id/listaPacientesFragment" />
+
+        <action
+            android:id="@+id/action_menu_to_listaDoctores"
+            app:destination="@id/listaDoctoresFragment" />
+
+        <action
+            android:id="@+id/action_menu_to_listaCitas"
+            app:destination="@id/listaCitasFragment" />
+
+        <action
+            android:id="@+id/action_menu_to_reportes"
+            app:destination="@id/reportesFragment" />
+
+        <action
+            android:id="@+id/action_menu_to_ubicacion"
+            app:destination="@id/ubicacionFragment" />
+
+        <action
+            android:id="@+id/action_menu_to_acercaDe"
+            app:destination="@id/acercaDeFragment" />
+    </fragment>
+
+    <!-- Fragment Lista de Pacientes -->
+    <fragment
+        android:id="@+id/listaPacientesFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.ListaPacientesFragment"
+        android:label="Pacientes"
+        tools:layout="@layout/fragment_lista_pacientes">
+
+        <action
+            android:id="@+id/action_listaPacientes_to_registroPaciente"
+            app:destination="@id/registroPacienteFragment" />
+    </fragment>
+
+    <!-- Fragment Registro de Paciente -->
+    <fragment
+        android:id="@+id/registroPacienteFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.RegistroPacienteFragment"
+        android:label="Registro Paciente"
+        tools:layout="@layout/fragment_registro_paciente">
+
+        <!-- Argumentos para modo edición -->
+        <argument
+            android:name="codigo"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="nombres"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="apellidos"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="dni"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="telefono"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="correo"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <!-- Fragment Lista de Doctores -->
+    <fragment
+        android:id="@+id/listaDoctoresFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.ListaDoctoresFragment"
+        android:label="Doctores"
+        tools:layout="@layout/fragment_lista_doctores">
+
+        <action
+            android:id="@+id/action_listaDoctores_to_registroDoctor"
+            app:destination="@id/registroDoctorFragment" />
+    </fragment>
+
+    <!-- Fragment Registro de Doctor -->
+    <fragment
+        android:id="@+id/registroDoctorFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.RegistroDoctorFragment"
+        android:label="Registro Doctor"
+        tools:layout="@layout/fragment_registro_doctor">
+
+        <argument
+            android:name="codigo"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="nombres"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="apellidos"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="especialidad"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="telefono"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="colegiatura"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <!-- Fragment Lista de Citas -->
+    <fragment
+        android:id="@+id/listaCitasFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.ListaCitasFragment"
+        android:label="Citas"
+        tools:layout="@layout/fragment_lista_citas">
+
+        <!-- Desde ListaCitas hacia DetalleCita -->
+        <action
+            android:id="@+id/action_listaCitas_to_detalleCita"
+            app:destination="@id/detalleCitaFragment" />
+
+        <!-- Desde ListaCitas hacia RegistroCita -->
+        <action
+            android:id="@+id/action_listaCitas_to_registroCita"
+            app:destination="@id/registroCitaFragment" />
+
+        <!-- Desde DetalleCita hacia RegistroCita (editar desde detalle) -->
+        <action
+            android:id="@+id/action_detalleCita_to_registroCita"
+            app:destination="@id/registroCitaFragment" />
+    </fragment>
+
+    <!-- Fragment Registro de Cita -->
+    <fragment
+        android:id="@+id/registroCitaFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.RegistroCitaFragment"
+        android:label="Registro Cita"
+        tools:layout="@layout/fragment_registro_cita">
+
+        <argument
+            android:name="codigo"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="codigoPaciente"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="codigoDoctor"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="fecha"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="hora"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="motivo"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="estado"
+            app:argType="string"
+            android:defaultValue="Pendiente" />
+    </fragment>
+
+    <!-- Fragment Detalle de Cita -->
+    <fragment
+        android:id="@+id/detalleCitaFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.DetalleCitaFragment"
+        android:label="Detalle Cita"
+        tools:layout="@layout/fragment_detalle_cita">
+
+        <argument
+            android:name="codigo"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="codigoPaciente"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="nombrePaciente"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="codigoDoctor"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="nombreDoctor"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="fecha"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="hora"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="motivo"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="estado"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <action
+            android:id="@+id/action_detalleCita_to_registroCita"
+            app:destination="@id/registroCitaFragment" />
+    </fragment>
+
+    <!-- Fragment Reportes -->
+    <fragment
+        android:id="@+id/reportesFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.ReportesFragment"
+        android:label="Reportes"
+        tools:layout="@layout/fragment_reportes" />
+
+    <!-- Fragment Ubicación -->
+    <fragment
+        android:id="@+id/ubicacionFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.UbicacionFragment"
+        android:label="Ubicación"
+        tools:layout="@layout/fragment_ubicacion" />
+
+    <!-- Fragment Acerca De -->
+    <fragment
+        android:id="@+id/acercaDeFragment"
+        android:name="com.intoc.sistemacitasmedicas.fragments.AcercaDeFragment"
+        android:label="Acerca De"
+        tools:layout="@layout/fragment_acerca_de" />
+
+</navigation>

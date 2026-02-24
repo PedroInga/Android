@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MediCitas</string>
+    <string name="titulo_login">Iniciar Sesión</string>
+    <string name="titulo_menu">Menú Principal</string>
+    <string name="titulo_pacientes">Pacientes</string>
+    <string name="titulo_doctores">Doctores</string>
+    <string name="titulo_citas">Citas Médicas</string>
+    <string name="titulo_reportes">Reportes</string>
+    <string name="titulo_ubicacion">Ubicación</string>
+    <string name="titulo_acerca">Acerca De</string>
+    <string name="btn_ingresar">INGRESAR</string>
+    <string name="btn_cancelar">CANCELAR</string>
+    <string name="btn_guardar">GUARDAR</string>
+    <string name="btn_buscar">BUSCAR</string>
+    <string name="btn_nuevo">NUEVO</string>
+    <string name="btn_eliminar">ELIMINAR</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contrasenia">Contraseña</string>
+</resources>

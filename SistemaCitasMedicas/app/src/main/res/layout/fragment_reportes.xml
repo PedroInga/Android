@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: HeaderPantalla, TextoTituloPantalla, CardEstandar, TextoNumeroGrande, TextoSecundario, TextoSubtitulo, TextoCuerpo, BotonSecundario -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header - Usa estilo HeaderPantalla con orientación vertical y gravity center -->
+        <LinearLayout
+            style="@style/HeaderPantalla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_reportes"
+                app:tint="@color/colorWhite"
+                android:contentDescription="Reportes" />
+
+            <!-- Título - Usa estilo TextoTituloPantalla -->
+            <TextView
+                style="@style/TextoTituloPantalla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reportes y Estadísticas"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- === TARJETAS DE RESUMEN === -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <!-- Card Pacientes - Usa estilo CardEstandar -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardEstandar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_paciente"
+                        app:tint="@color/colorPrimary"
+                        android:contentDescription="Pacientes" />
+
+                    <!-- Número - Usa estilo TextoNumeroGrande + color primario -->
+                    <TextView
+                        style="@style/TextoNumeroGrande"
+                        android:id="@+id/tvTotalPacientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="4dp" />
+
+                    <!-- Label - Usa estilo TextoSecundario -->
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pacientes" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card Doctores - Usa estilo CardEstandar -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardEstandar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_doctor"
+                        app:tint="@color/colorAccent"
+                        android:contentDescription="Doctores" />
+
+                    <!-- Número - Usa estilo TextoNumeroGrande + color accent -->
+                    <TextView
+                        android:id="@+id/tvTotalDoctores"
+                        style="@style/TextoNumeroGrande"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textColor="@color/colorAccent" />
+
+                    <!-- Label - Usa estilo TextoSecundario -->
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doctores" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card Citas - Usa estilo CardEstandar -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/CardEstandar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_cita"
+                        app:tint="@color/colorSuccess"
+                        android:contentDescription="Citas" />
+
+                    <!-- Número - Usa estilo TextoNumeroGrande + color success -->
+                    <TextView
+                        style="@style/TextoNumeroGrande"
+                        android:id="@+id/tvTotalCitas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/colorSuccess"
+                        android:layout_marginTop="4dp" />
+
+                    <!-- Label - Usa estilo TextoSecundario -->
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Citas" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- === CARD CITAS POR ESTADO === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Citas por Estado"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Fila Pendientes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@color/colorWarning"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        style="@style/TextoCuerpo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pendientes"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvCitasPendientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWarning" />
+                </LinearLayout>
+
+                <!-- Fila Confirmadas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@color/colorSuccess"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        style="@style/TextoCuerpo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Confirmadas"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvCitasConfirmadas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorSuccess" />
+                </LinearLayout>
+
+                <!-- Fila Completadas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        style="@style/TextoCuerpo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Completadas"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvCitasCompletadas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+
+                <!-- Fila Canceladas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@color/colorDanger"
+                        android:layout_gravity="center_vertical" />
+
+                    <TextView
+                        style="@style/TextoCuerpo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Canceladas"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvCitasCanceladas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorDanger" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- === CARD DOCTORES MÁS SOLICITADOS === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Subtítulo sección - Usa estilo TextoSubtitulo + color primario -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctores más solicitados"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="8dp" />
+
+                <ListView
+                    android:id="@+id/lvDoctoresTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón Volver - Usa estilo BotonSecundario -->
+        <com.google.android.material.button.MaterialButton
+            style="@style/BotonSecundario"
+            android:id="@+id/btnVolverReportes"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Volver al Menú"
+            app:icon="@drawable/ic_volver"
+            app:iconTint="@color/colorPrimary" />
+
+        <!-- === CARD PRÓXIMOS FERIADOS (API REST) === -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Subtítulo sección -->
+                <TextView
+                    style="@style/TextoSubtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🗓️ Próximos Feriados (API REST)"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Indicador de fuente de datos -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Datos obtenidos de: date.nager.at"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- ProgressBar mientras carga -->
+                <ProgressBar
+                    android:id="@+id/progressFeriados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="visible" />
+
+                <!-- Mensaje de error -->
+                <TextView
+                    android:id="@+id/tvErrorFeriados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorDanger"
+                    android:visibility="gone" />
+
+                <!-- Lista de feriados -->
+                <ListView
+                    android:id="@+id/lvFeriados"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

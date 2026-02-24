@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: TextoTituloPantalla, TextoSecundario, CampoTexto, BotonPrimario, BotonSecundario -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_cita"
+            android:contentDescription="Icono cita" />
+
+        <!-- Título - Usa estilo TextoTituloPantalla + color primario -->
+        <TextView
+            style="@style/TextoTituloPantalla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Registrar Cita Médica"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Label Paciente - Usa estilo TextoSecundario -->
+        <TextView
+            style="@style/TextoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paciente"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spPacienteCita"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_spinner"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Label Doctor - Usa estilo TextoSecundario -->
+        <TextView
+            style="@style/TextoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spDoctorCita"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_spinner"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Campo Fecha - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFechaCita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fecha (dd/mm/yyyy)"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_calendario"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Hora - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etHoraCita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hora (HH:mm)"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_reloj"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Motivo - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMotivoCita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Motivo de la consulta"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:gravity="top"
+                android:drawableStart="@drawable/ic_nota"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Label Estado - Usa estilo TextoSecundario -->
+        <TextView
+            style="@style/TextoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spEstadoCita"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_spinner"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botones - Usan estilos BotonPrimario y BotonSecundario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonPrimario"
+                android:id="@+id/btnGuardarCita"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:layout_marginEnd="8dp"
+                app:icon="@drawable/ic_guardar"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonSecundario"
+                android:id="@+id/btnLimpiarCita"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Limpiar"
+                app:icon="@drawable/ic_limpiar"
+                app:iconGravity="textStart"
+                app:iconTint="@color/colorPrimary" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: HeaderPantalla, TextoTituloPantalla, CardEstandar, TextoSubtitulo, TextoSecundario, BotonPrimario -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- Header - Usa estilo HeaderPantalla -->
+    <LinearLayout
+        style="@style/HeaderPantalla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_ubicacion"
+            app:tint="@color/colorWhite"
+            android:contentDescription="Ubicación" />
+
+        <!-- Título - Usa estilo TextoTituloPantalla -->
+        <TextView
+            style="@style/TextoTituloPantalla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubicación de la Clínica"
+            android:textSize="20sp"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
+
+    <!-- Mapa -->
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Card información clínica - Usa estilo CardEstandar -->
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CardEstandar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Nombre clínica - Usa estilo TextoSubtitulo + color primario -->
+            <TextView
+                style="@style/TextoSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clínica MediCitas"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary" />
+
+            <!-- Dirección - Usa estilo TextoSecundario -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Av. La Marina 2500, San Miguel, Lima"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Horario - Usa estilo TextoSecundario -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horario: Lunes a Sábado 8:00 - 20:00"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+            <!-- Teléfono - Usa estilo TextoSecundario -->
+            <TextView
+                style="@style/TextoSecundario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teléfono: (01) 555-0100"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+
+            <!-- Botón - Usa estilo BotonPrimario -->
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonPrimario"
+                android:id="@+id/btnComoLlegar"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="¿Cómo llegar?"
+                android:layout_marginTop="12dp"
+                app:icon="@drawable/ic_ubicacion"
+                app:iconTint="@color/colorWhite" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menú Principal: Muestra las opciones del sistema con CardViews -->
+<!-- ESTILOS APLICADOS: TextoTituloPantalla, TextoSecundario, TextoSubtitulo, CardEstandar, BotonPeligro -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Banner superior de bienvenida - Usa estilo CardEstandar -->
+        <androidx.cardview.widget.CardView
+            style="@style/CardEstandar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:contentDescription="Banner bienvenida"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_bienvenida" />
+
+                <!-- Título bienvenida - Usa estilo TextoTituloPantalla -->
+                <TextView
+                    style="@style/TextoTituloPantalla"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bienvenido al Sistema"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Nombre de usuario - Usa estilo TextoSecundario + color blanco -->
+                <TextView
+                    style="@style/TextoSecundario"
+                    android:id="@+id/tvUsuarioMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Administrador"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fila 1: Pacientes y Doctores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Card Pacientes - Usa estilo CardEstandar -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardEstandar"
+                android:id="@+id/cardPacientes"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorCardPaciente"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_paciente"
+                        android:contentDescription="Pacientes" />
+
+                    <!-- Nombre card - Usa estilo TextoSubtitulo -->
+                    <TextView
+                        style="@style/TextoSubtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pacientes"
+                        android:layout_marginTop="8dp" />
+
+                    <!-- Descripción card - Usa estilo TextoSecundario -->
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gestionar pacientes"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Doctores - Usa estilo CardEstandar -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardEstandar"
+                android:id="@+id/cardDoctores"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorCardPaciente"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_doctor"
+                        android:contentDescription="Doctores" />
+
+                    <TextView
+                        style="@style/TextoSubtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doctores"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gestionar doctores"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Fila 2: Citas y Reportes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Card Citas - Usa estilo CardEstandar -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardEstandar"
+                android:id="@+id/cardCitas"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorCardDoctor"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_cita"
+                        android:contentDescription="Citas" />
+
+                    <TextView
+                        style="@style/TextoSubtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Citas Médicas"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agendar y gestionar"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Reportes - Usa estilo CardEstandar -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardEstandar"
+                android:id="@+id/cardReportes"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorCardDoctor"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_reporte"
+                        android:contentDescription="Reportes" />
+
+                    <TextView
+                        style="@style/TextoSubtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reportes"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estadísticas"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Fila 3: Ubicación y Acerca De -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Card Ubicación - Usa estilo CardEstandar -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardEstandar"
+                android:id="@+id/cardUbicacion"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorCardCita"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/ic_mapa"
+                        android:contentDescription="Ubicación" />
+
+                    <TextView
+                        style="@style/TextoSubtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubicación"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mapa de la clínica"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Acerca De - Usa estilo CardEstandar -->
+            <androidx.cardview.widget.CardView
+                style="@style/CardEstandar"
+                android:id="@+id/cardAcercaDe"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/colorCardCita"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_info"
+                        android:contentDescription="Acerca De" />
+
+                    <TextView
+                        style="@style/TextoSubtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acerca De"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TextoSecundario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Información"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Botón Cerrar Sesión - Usa estilo BotonPeligro -->
+        <Button
+            style="@style/BotonPeligro"
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="CERRAR SESIÓN"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>

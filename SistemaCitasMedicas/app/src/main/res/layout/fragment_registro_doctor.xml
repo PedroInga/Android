@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ESTILOS APLICADOS: TextoTituloPantalla, TextoSecundario, CampoTexto, BotonPrimario, BotonSecundario -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_doctor"
+            android:contentDescription="Icono doctor" />
+
+        <!-- Título - Usa estilo TextoTituloPantalla + color primario -->
+        <TextView
+            style="@style/TextoTituloPantalla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Registro de Doctor"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Campo nombre - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNombreDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre completo"
+                android:inputType="textPersonName"
+                android:drawableStart="@drawable/ic_persona"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo CMP - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCmpDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CMP (Colegio Médico)"
+                android:inputType="number"
+                android:maxLength="6"
+                android:drawableStart="@drawable/ic_dni"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Label especialidad - Usa estilo TextoSecundario -->
+        <TextView
+            style="@style/TextoSecundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Especialidad"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spEspecialidad"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_spinner"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Campo teléfono - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTelefonoDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono"
+                android:inputType="phone"
+                android:maxLength="9"
+                android:drawableStart="@drawable/ic_telefono"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo email - Usa estilo CampoTexto -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmailDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botones - Usan estilos BotonPrimario y BotonSecundario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonPrimario"
+                android:id="@+id/btnGuardarDoctor"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:layout_marginEnd="8dp"
+                app:icon="@drawable/ic_guardar"
+                app:iconGravity="textStart" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/BotonSecundario"
+                android:id="@+id/btnLimpiarDoctor"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Limpiar"
+                app:icon="@drawable/ic_limpiar"
+                app:iconGravity="textStart"
+                app:iconTint="@color/colorPrimary" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
